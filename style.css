@@ -7,11 +7,15 @@ html, body {
 #display-container {
     display: flex;
     flex: 1;
-    background-color: navy;
+    background-color: #4646bd;
     width: 300px;
     height: 80px;
     justify-content: center;
     align-items: center;
+    border-top: solid 2px navy;
+    border-left: solid 2px navy;
+    border-right: solid 2px navy;
+    border-radius: 5px;
 }
 
 #display {
@@ -20,18 +24,24 @@ html, body {
     justify-content: flex-end;
     align-items: center;
     background-color: white;
-    width: 50px;
-    height: 60px;
+    margin: 40px;
+    padding: 10px;
+    border: solid 2px navy;
+    border-radius: 5px;
 }
 
 #calcbuttons-container {
     display: grid;
-    background-color: navy;
+    background-color: #4646bd;
     grid-template-columns: repeat(4, 50px);
     justify-content: center;
     align-items: center;
     width: 300px;
     height: 200px;
+    border-bottom: solid 2px navy;
+    border-left: solid 2px navy;
+    border-right: solid 2px navy;
+    border-radius: 5px;
 }
 
 button {
