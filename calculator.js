@@ -27,6 +27,54 @@ function power(base, power) {
 }
 
 // pass in add, subtract, multiply, divide, or power and return desired result
-function operate(operator, a, b) {
-    return operator(a,b);
+function operate(operation, a, b) {
+    switch (operation) {
+        case "add":
+            return add(a, b);
+            break;
+        case "subtraction":
+            return subtract(a, b);
+            break;
+        case "multiply":
+            return multiply(a, b);
+            break;
+        case "divide":
+            return divide(a, b);
+            break;
+    }
 }
+
+let display = document.getElementById("display");
+display.textContent = "";
+let previousValue = 0;
+let operation;
+
+const digits = document.querySelectorAll(".digit");
+digits.forEach((digit) => {
+    digit.addEventListener("click", (event) => {
+        display.textContent += digit.id;
+    });
+});
+
+const clear = document.getElementById("clear");
+clear.addEventListener("click", (event) => {
+    display.textContent = "";
+    operation = "";
+    previousValue = 0;
+});
+
+const operators = document.querySelectorAll(".operator")
+operators.forEach((operator) => {
+    operator.addEventListener("click", (event) => {
+        operation = operator.id;
+        previousValue = Number(display.textContent);
+        display.textContent = "";
+    });
+});
+
+const equals = document.getElementById("equals");
+equals.addEventListener("click", (event) => {
+    const toDisplay = operate(operation, previousValue, Number(display.textContent));
+    display.textContent = toDisplay;
+    previousValue = toDisplay;
+});
