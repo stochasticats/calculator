@@ -32,7 +32,7 @@ function operate(operation, a, b) {
         case "add":
             return add(a, b);
             break;
-        case "subtraction":
+        case "subtract":
             return subtract(a, b);
             break;
         case "multiply":
