@@ -50,3 +50,10 @@ button {
     text-align: center;
 }
 
+.digit {
+    background-color: #96B2F3;
+}
+
+.operator {
+    background-color: #FAD442;
+}
